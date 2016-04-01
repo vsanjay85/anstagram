@@ -1,0 +1,23 @@
+---
+
+# /home/ubuntu/anstagram/local.yml
+
+- hosts: 127.0.0.1 
+  connection: local
+  #user: urover 
+  sudo: True
+
+  tasks:
+  - name: Ping!
+    ping:
+
+  - name: Copy index.php files to nginx www folder
+    action: copy src=index.php dest=/var/www/html/index2.php
+
+  - name: Copy nginx conf to default sites folder
+    action: copy src=default dest=/etc/nginx/sites-available/default2
+    notify: Restart nginx
+
+  handlers:
+  - name: Restart nginx
+    action: service name=nginx state=restarted
