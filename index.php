@@ -50,7 +50,7 @@ if(isset($_POST['anword']))
 Commercial support is available at
 <a href="http://nginx.com/">nginx.com</a>.</p>
 
-<p><em>Thank you for using nginx.</em></p>
+<p><em>Thank you for using nginx, eh?</em></p>
 -->
 </body>
 </html>
