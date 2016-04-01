@@ -33,8 +33,10 @@ if(isset($_POST['anword']))
 	$anword = htmlspecialchars($_POST['anword']);
 	if(str_word_count("$anword") == 1)
 		{
-		echo $anword;
+		echo "Generating Anagrams For: $anword <br> <br>";
 		$output = shell_exec("/usr/games/an {$anword} | tr '[:upper:]' '[:lower:]' | uniq");
+		$count = count(explode("\n", $output));		
+		echo "Your Word Generated $count Anagrams:";		
 		echo "<pre>$output</pre>";
 		}
 	elseif(str_word_count("$anword") < 1)
