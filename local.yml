@@ -12,10 +12,10 @@
     ping:
 
   - name: Copy index.php files to nginx www folder
-    action: copy src=index.php dest=/var/www/html/index2.php
+    action: copy src=index.php dest=/var/www/html/index.php
 
   - name: Copy nginx conf to default sites folder
-    action: copy src=default dest=/etc/nginx/sites-available/default2
+    action: copy src=default dest=/etc/nginx/sites-available/default
     notify: Restart nginx
 
   handlers:
