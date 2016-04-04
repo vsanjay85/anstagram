@@ -12,6 +12,7 @@
 </head>
 <body>
 <h1>Welcome to Anstagram!</h1>
+
 <p>Enter a single word, and I'll generate all possible anagrams for it.</p>
 
 <p>
@@ -29,7 +30,7 @@
 <?php
 if(isset($_POST['anword']))
     {
-	
+
 	$anword = htmlspecialchars($_POST['anword']);
 	if(str_word_count("$anword") == 1)
 		{
@@ -54,5 +55,8 @@ Commercial support is available at
 
 <p><em>Thank you for using nginx, eh?</em></p>
 -->
+
 </body>
+<footer>
+<p> You're being served by: <?php echo gethostname(); ?> </p>  </footer>
 </html>
