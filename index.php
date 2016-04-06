@@ -32,15 +32,16 @@ if(isset($_POST['anword']))
     {
 
 	$anword = htmlspecialchars($_POST['anword']);
+	$escaped_anword = escapeshellarg($anword);
 	if(str_word_count("$anword") == 1)
 		{
 		echo "Generating Anagrams For: $anword <br> <br>";
-		$output = shell_exec("/usr/games/an {$anword} | tr '[:upper:]' '[:lower:]' | uniq");
+		$output = shell_exec("/usr/games/an {$escaped_anword} | tr '[:upper:]' '[:lower:]' | uniq");
 		$count = count(explode("\n", $output));		
 		echo "Your Word Generated $count Anagrams:";		
 		echo "<pre>$output</pre>";
 		}
-	elseif(str_word_count("$anword") < 1)
+	elseif(str_word_count("$escaped_anword") < 1)
 		{
 			echo "You Did Not Enter Anything!!";
 		}
