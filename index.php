@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Welcome to Anstagram!</title>
+<title>Welcome to Saskatchewan!</title>
 <style>
     body {
         width: 35em;
@@ -12,17 +12,14 @@
 </head>
 <body>
 <h1>Welcome to Anstagram!</h1>
-
 <p>Enter a single word, and I'll generate all possible anagrams for it.</p>
-
 <p>
 <form  method="post" action="">
-  Enter Word:<br>
+  Enter A Word:<br>
   <input type="text" name="anword"><br>
-
-<input type="submit" value="Submit">
-<a href="." style="text-decoration: none">
-   <input type="button" value="Clear Results" />
+  <input type="submit" value="Submit">
+  <a href="." style="text-decoration: none">
+  <input type="button" value="Clear Results" />
 </a>
 </form>
 </p>
@@ -30,7 +27,6 @@
 <?php
 if(isset($_POST['anword']))
     {
-
 	$anword = htmlspecialchars($_POST['anword']);
 	$escaped_anword = escapeshellarg($anword);
 	if(str_word_count("$anword") == 1)
@@ -41,21 +37,13 @@ if(isset($_POST['anword']))
 		echo "Your Word Generated $count Anagrams:";		
 		echo "<pre>$output</pre>";
 		}
-	elseif(str_word_count("$escaped_anword") < 1)
+	elseif(str_word_count("$anword") < 1)
 		{
 			echo "You Did Not Enter Anything!!";
 		}
 	else { echo "Enter Only One Word!!"; }
 	}
 ?>
-
-<!--<p>For online documentation and support please refer to
-<a href="http://nginx.org/">nginx.org</a>.<br/>
-Commercial support is available at
-<a href="http://nginx.com/">nginx.com</a>.</p>
-
-<p><em>Thank you for using nginx, eh?</em></p>
--->
 
 </body>
 <footer>
