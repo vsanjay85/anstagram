@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Welcome to Anstagram!!!</title>
+<title>Anstagram Welcomes You!!!</title>
 <style>
     body {
         width: 35em;
