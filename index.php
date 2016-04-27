@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Welcome to Saskatchewan!</title>
+<title>Welcome to Anstagram!!!</title>
 <style>
     body {
         width: 35em;
